@@ -14,10 +14,15 @@ const Container = styled.div`
   flex-direction : column;
   border-radius : 5px;
   overflow : hidden;
-
   -webkit-box-shadow: 2px 2px 15px -1px rgba(219,215,219,1);
   -moz-box-shadow: 2px 2px 15px -1px rgba(219,215,219,1);
   box-shadow: 2px 2px 15px -1px rgba(219,215,219,1);
+  // border : 2px solid red;
+
+  @media (max-width: 625px) {
+    width : 300px;
+    height : 470px;
+  }
 `;
 
 const Image = styled.img`

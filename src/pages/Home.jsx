@@ -9,8 +9,10 @@ import { decrement, increment } from '../redux/pageSlice'
 const Container = styled.div`
   display: flex;
   gap : 10px;
-  width : 295;
+  // width : 295;
+  // border : 2px solid red;
   flex-wrap: wrap;
+
 `;
 
 const Actions = styled.div`

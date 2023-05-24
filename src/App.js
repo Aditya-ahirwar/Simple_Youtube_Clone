@@ -10,24 +10,29 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 const Container = styled.div`
   display: flex;
   font-family: 'Roboto', sans-serif;
+  flex-direction : column;
+  box-sizing : border-box;
 `;
 
 const Main = styled.div`
-  flex: 5;
   // border : 2px solid red;
-  // background-color: white;
+  display : flex;
 `;
 const Wrapper = styled.div`
   padding: 20px 20px;
+  flex : 5;
+  // border : 2px solid red;
 `;
 
 function App() {
+
   return (
       <Container>
         <BrowserRouter>
-          <Menu/>
+        <Navbar />
+          
           <Main>
-            <Navbar />
+            <Menu/>
             <Wrapper>
               <Routes>
                 <Route path="/">

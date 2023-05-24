@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import YouTube from "../logo.png";
 import HomeIcon from "@mui/icons-material/Home";
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import SubscriptionsOutlinedIcon from "@mui/icons-material/SubscriptionsOutlined";
@@ -12,33 +11,26 @@ import SportsBasketballOutlinedIcon from "@mui/icons-material/SportsBasketballOu
 import MovieOutlinedIcon from "@mui/icons-material/MovieOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Link } from "react-router-dom";
+
+
 const Container = styled.div`
-  flex: 1;
   background-color:white;
-  height: 100vh;
+  height: 580px; 
   color: black;
   font-size: 14px;
-  position: sticky;
-  top: 0;
+  // border : 2px solid red;
+  flex : 1;
+  position : sticky;
+  top : 56px;
+
+  @media (max-width: 625px) {
+    display : none;
+  }
 `;
 const Wrapper = styled.div`
   // padding: 18px 26px;
 `;
-const Logo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  // font-weight: bold;
-  font-size : 20px;
-  margin-bottom: 25px;
-  padding : 18px 26px;
-  // border : 2px solid red;
-  font-family: 'Anton', sans-serif;
-`;
 
-const Img = styled.img`
-  height: 25px;
-`;
 
 const Item = styled.div`
   display: flex;
@@ -87,12 +79,6 @@ const Menu = () => {
   return (
     <Container>
       <Wrapper>
-        <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
-          <Logo>
-            <Img src={YouTube} />
-            YouTube
-          </Logo>
-          </Link>
         <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
         <Item>
           <HomeIcon />

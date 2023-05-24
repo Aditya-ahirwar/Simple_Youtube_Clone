@@ -2,28 +2,54 @@ import React from "react";
 import styled from "styled-components";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import YouTube from "../logo.png";
+import { Link } from "react-router-dom";
+
 
 const Container = styled.div`
   position: sticky;
   top: 0;
   background-color: white;
   height: 56px;
+  // width : 100vw;
+  box-sizing : border-box;
+  // border : 2px solid red;
+
 `;
 
 const Wrapper = styled.div`
+// border : 2px solid red;
   display: flex;
+  flex-direction : row;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   height: 100%;
   padding: 0px 20px;
-  position: relative;
+`;
+const Logo = styled.div`
+  display: flex;
+  // border : 2px solid red;
+  align-items: center;
+  justify-content : flex-start;
+  gap: 5px;
+  font-size : 20px;
+  font-family: 'Anton', sans-serif;
+  p{
+    @media (max-width: 625px) {
+      display : none;
+    }
+  }
+`;
+
+const Img = styled.img`
+  height: 30px;
+  @media (max-width: 625px) {
+    height : 50px;
+  }
 `;
 
 const Search = styled.div`
-  width: 60%;
-  position: absolute;
-  left: 0px;
-  right: 0px;
+  width: 40%;
   margin: auto;
   display: flex;
   align-items: center;
@@ -32,6 +58,9 @@ const Search = styled.div`
   border: 1px solid #ccc;
   border-radius: 10px;
   color: black;
+  @media (max-width: 625px) {
+    width : 75%;
+  }
 `;
 
 const Input = styled.input`
@@ -53,6 +82,10 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
+
+  @media (max-width: 625px) {
+    display : none;
+  }
 `;
 
 
@@ -62,14 +95,20 @@ const Navbar = () => {
     <>
       <Container>
         <Wrapper>
+        <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
+          <Logo>
+            <Img src={YouTube} />
+            <p>YouTube</p>
+          </Logo>
+          </Link>
           <Search>
             <Input placeholder="Search" />
             <SearchOutlinedIcon/>
           </Search>
-              <Button>
-                <AccountCircleOutlinedIcon />
-                SIGN IN
-              </Button>
+            <Button>
+              <AccountCircleOutlinedIcon />
+              SIGN IN
+            </Button>
         </Wrapper>
       </Container>
     </>
