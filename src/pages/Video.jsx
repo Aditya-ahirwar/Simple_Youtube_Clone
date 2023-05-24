@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef  } from "react";
 import styled from "styled-components";
 import { useSelector } from 'react-redux'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
@@ -106,10 +106,28 @@ background-color : #2c2c2c76;
 
 const Video = () => {
   const video = useSelector((state) => state.video)
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleVideoClick = () => {
+    const video = videoRef.current;
+
+    if (isPlaying) {
+      video.pause();
+    } else {
+      video.play();
+    }
+
+    setIsPlaying(!isPlaying);
+  };
+
+
   return (
     <Container>
       <Wrapper>
-        <VideoFrame src={video.submission.mediaUrl} controls/>
+        <VideoFrame ref={videoRef} onClick={handleVideoClick}>
+          <source src={video.submission.mediaUrl} type="video/mp4"></source>
+        </VideoFrame>
         <ActionButtons>
           <ActionIcon>
           <ThumbUpIcon/>
